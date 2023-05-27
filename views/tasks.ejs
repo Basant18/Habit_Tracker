@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="css/tasks.css">
+<ul id="tasks-list">
+    <% for(let task of taskStatus) {%>
+        <li>
+            <a href="/taskUpdate?id=<%=habit._id%>&idx=<%=task.idx%>">
+                <% if(task.status == 'done'){ %>
+                    <i class="fa-solid fa-check"></i> 
+                <% }if(task.status == 'undone'){ %> 
+                    <i class="fa-solid fa-stop"></i>
+                <% } if(task.status == 'reject'){%>
+                    <i class="fa-regular fa-xmark"></i>
+                <% } %>    
+                <h4><%=task.status%></h4>
+                <p><%=task.date%></p>
+            </a>
+        </li>
+    <% } %>
+</ul>

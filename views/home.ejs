@@ -1,0 +1,22 @@
+<link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+/>
+<h1 id="heading">Habit Tracker App</h1>
+<form action="/addHabit" method="POST" id="habit-form">
+    <input type="text" name="habit" placeholder="Enter habit...">
+    <input type="submit" value="Add">
+</form>
+
+<ul id="habit-list">
+    <% for(let habit of habits) { %> 
+        <li>
+            <a href="/taskStatus/<%=habit._id%>"><%= habit.habit %></a>
+            <a href="/deleteHabit/<%=habit._id%>"> <i class="fa-solid fa-trash"></i> </a>
+        </li>
+    <% } %>
+</ul>
+
