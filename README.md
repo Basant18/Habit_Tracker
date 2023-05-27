@@ -15,32 +15,32 @@ This is a habit tracker app where I user can add his/her habits and see past 6 d
 2. Habit Tracker here you can track your habit for past 7 days and change the status.
 
 #Directory-Structure
+
 Habit_tracker
     |-----assets
     |       |--- css
-    |       |     |-- header.css
+    |       |     |-- habit.css
     |       |     |-- home.css
     |       |     └-- layout.css
-    |       |     |-- tasks.css    
+    |       |--- js
+    |       |     |-- habit.js
+    |       |     └-- moment.js
     |       |--- sass
-    |             |-- header.scss
+    |             |-- habit.scss
     |             |-- home.scss
     |             └-- layout.scss
-    |             |-- tasks.scss
     |------ config
     |         └--- mongoose.js
     |------ controllers
-    |         └--- home_controllers.js
+    |         └--- habit_controllers.js
     |------ models
     |         └--- habit.js
-    |------ routes
+    |------ routers
     |         └--- index.js
-    |         |---- home.js 
     |------ views
-    |         |--- _header.ejs
+    |         |--- habit..ejs
     |         |--- home.ejs
     |         └--- layout.ejs
-    |         \--- tasks.ejs  
     |------ .gitignore
     |------ app.js
     |------ package.json
