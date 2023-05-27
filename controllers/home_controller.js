@@ -2,6 +2,7 @@ const Habit = require('../models/habit');
 
 module.exports.home = async (req,res) =>{
     try {
+        //find all the habits and render it on a page
         let habits = await Habit.find({});
         return res.render('home',{
             title: 'Habit Tracker',
@@ -12,18 +13,6 @@ module.exports.home = async (req,res) =>{
         return;
     }
 }
-
-// function Last7Days () {
-//     var result = [];
-//     for (let i=6; i>=0; i--) {
-//         var d = new Date();
-//         d.setDate(d.getDate() - (i+3));
-//         result.push({date: d,status: 'undone'});
-//     }
-//     let i=0;
-//     let arr = result.map(x => {return {idx: i++,date: x.date.toLocaleDateString('en-US'),status: x.status}});
-//     return arr;
-// }
 
 function Last7Days () {
     var result = [];
@@ -39,6 +28,7 @@ function Last7Days () {
 
 module.exports.addHabit = async (req,res) =>{
     try{
+        ///here I am creating an array containing last 7 days record and rendering it on page.
         let arr = Last7Days();
         console.log(arr);
         let habit = await Habit.create({
@@ -54,6 +44,7 @@ module.exports.addHabit = async (req,res) =>{
 
 module.exports.deleteHabit = async (req, res) =>{
     try {
+        // delete habit and the array containg record of past 7 days
         const habit = await Habit.findById(req.params.id);
         await habit.deleteOne();
         console.log(habit);
@@ -65,13 +56,13 @@ module.exports.deleteHabit = async (req, res) =>{
 
 module.exports.taskStatus = async(req,res) =>{
     try {
+        //changing the date to the previous 7 days.
         const habit = await Habit.findById(req.params.id);
         let arr = habit.trackHistory;
         let endDate = new Date();
         let startDate = new Date();
         startDate.setDate(startDate.getDate() - 6);
         console.log(startDate);
-        // endDate = endDate.toLocaleDateString('en-US');
         startDate = startDate.toLocaleDateString('en-US');
         for(var i=0;i<arr.length;i++)
         {
@@ -111,6 +102,7 @@ module.exports.taskStatus = async(req,res) =>{
 
 module.exports.taskUpdate = async(req,res) =>{
     try {
+        // update record of past 7 days in db
         let habit = await Habit.findById(req.query.id);
         let obj = habit.trackHistory[req.query.idx];
         if(obj.status == 'undone')
