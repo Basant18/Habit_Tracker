@@ -7,14 +7,14 @@ SCSS
 HTML
 NodeJS
 
-#About
+# About
 This is a habit tracker app where I user can add his/her habits and see past 6 days habit and change the status of habit to done, undone or reject for the day.
 
-#Basic-Feature
+# Basic-Feature
 1. Home Page has all the habits you can add/delete the habit.
 2. Habit Tracker here you can track your habit for past 7 days and change the status.
 
-#Directory-Structure
+# Directory-Structure
 ```
 Habit_tracker
     |-----assets
