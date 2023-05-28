@@ -47,7 +47,7 @@ This is a habit tracker app where I user can add his/her habits and see past 6 d
 2. Habit Tracker here you can track your habit for past 7 days and change the status.
 
 #Directory-Structure
-
+```
 Habit_tracker
     |-----assets
     |       |--- css
@@ -78,4 +78,4 @@ Habit_tracker
     |------ package.json
     |------ package-lock.json
     └------ README.md
->>>>>>> 35043b1b5fe1f27e59730ab7bd86e9f3858aa168
+```
