@@ -1,3 +1,7 @@
+#tasks-div {
+  background-color: aquamarine;
+}
+
 #tasks-list {
   display: flex;
   flex-direction: column;

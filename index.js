@@ -11,7 +11,7 @@ app.use(express.static('./assets'));
 
 app.use(expressLayouts);
 //extract styles and scripts from the sub pages
-app.set('layout extarctStyles', true);
+app.set('layout extractStyles', true);
 app.set('layout extractScripts', true);
 //setup the view engine
 app.set('view engine', 'ejs');
